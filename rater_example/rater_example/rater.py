@@ -22,9 +22,16 @@ class PolicyApplication:
                 return "HG_1"
             
 def linear_interpolate(dictionary, target_key):
+    '''
+    Linear interpolates a target value amoungst a dictionary with intermediate key, value pairs
+    '''
 
-    dictionary = {float(k):v for k,v in dictionary.items()}     # Convert the keys to integers for ability to properly sort keys
-    sorted_keys = sorted(dictionary.keys())                   # Sort the dictionary keys
+    # Convert the keys to integers for ability to properly sort keys
+    dictionary = {float(k):v for k,v in dictionary.items()}         
+    
+    # Sort the dictionary keys
+    sorted_keys = sorted(dictionary.keys())                   
+    
     if target_key in dictionary:    
         return dictionary[target_key]
     
@@ -34,14 +41,15 @@ def linear_interpolate(dictionary, target_key):
             x1, y1 = sorted_keys[i+1], dictionary[sorted_keys[i+1]]
             return y0 + (y1 - y0) * (target_key - x0) / (x1 - x0)
         
+    # If the value was not directly in dictionary or not in the range of the sorted keys 
+    # (i.e., smaller than smallest value or larger than largest value) retun an Error
     raise ValueError("Target key is out of bounds for interpolation")
 
 
 
 def execute(pol_json):
     '''
-    Calculates the D&O policy premium from a json _
-    input (i.e., API call) containing a policy's _
+    Calculates the D&O policy premium from a json input (i.e., API call) containing a policy's _
     rating application information
     '''
     
