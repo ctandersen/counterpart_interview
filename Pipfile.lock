@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f18df9d00946652387478f07706c1660c48e11c06556d86f7ff0fdd35b2e21b6"
+            "sha256": "c800412791b07ee6ada618469630fd5c2211a530842eab853e82a62518f040c9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -15,7 +15,14 @@
             }
         ]
     },
-    "default": {},
+    "default": {
+        "rater": {
+            "file": "rater_example/dist/rater-0.1-py3-none-any.whl",
+            "hashes": [
+                "sha256:e47696529ed347b7a8845bce78188f1cc105cb9856af389a99f970fb4c750b53"
+            ]
+        }
+    },
     "develop": {
         "exceptiongroup": {
             "hashes": [

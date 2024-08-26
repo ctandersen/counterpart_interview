@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+rater = {file = "rater_example/dist/rater-0.1-py3-none-any.whl"}
 
 [dev-packages]
 pytest = "*"
