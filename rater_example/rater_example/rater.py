@@ -152,6 +152,7 @@ def execute(pol_json, rating_table=None):
     
     # Calculate premiums from rating components based on premium rules provided
     policy_premium = round( base_rate * (limit_factor - retention_factor) * industry_factor * lcm, 2)
+    
     return policy_premium    
     
     
