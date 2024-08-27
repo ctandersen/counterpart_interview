@@ -1,21 +1,21 @@
 import pytest
 
-from rater_example.rater_example.rater import execute
-from rater_example.rater_example.rater import PolicyApplication
-from rater_example.rater_example.rater import linear_interpolate
+from rater_example.rater import execute
+from rater_example.rater import PolicyApplication
+from rater_example.rater import linear_interpolate
 
 # Create a base policy for testing
 @pytest.fixture
 def json_input():
-    return {"Asset Size": 1200000, 
-            "Limit": 5000000, 
-            "Retention": 1000000, 
-            "Industry": "Hazard Group 2"}
+    return {"Asset Size": 1_000_000, 
+              "Limit": 5_000_000, 
+              "Retention": 1_000_000, 
+              "Industry": "Hazard Group 2"}
 
 # Base policy premium result, determine in EXCEL / calculator
 @pytest.fixture
 def premium_result():
-    return 4062.11
+    return 4387.2
 
 # Test golden policy works and match EXCEL result
 def test_execute_main(json_input, premium_result):
